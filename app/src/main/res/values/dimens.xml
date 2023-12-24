@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rs_icon_size_small">14.dp</dimen>
+    <dimen name="rs_icon_size_medium">24.dp</dimen>
+</resources>
