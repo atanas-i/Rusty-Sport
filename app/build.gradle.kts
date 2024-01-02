@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -5,9 +8,15 @@ plugins {
     id("com.google.dagger.hilt.android")
 }
 
+val secretePropertiesFile = rootProject.file("secrets.properties")
+val secretsProperties = Properties()
+
+secretsProperties.load(FileInputStream(secretePropertiesFile))
+
 android {
     namespace = "dev.rustybite.rustysport"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "dev.rustybite.rustysport"
@@ -20,6 +29,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "apiKey", "\"${secretsProperties.getProperty("apiKey")}\"")
     }
 
     buildTypes {
@@ -37,6 +48,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -76,8 +88,8 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.2.2")
 
     //Hilt DI
-    implementation("com.google.dagger:hilt-android:2.48")
-    ksp("com.google.dagger:hilt-compiler:2.48")
+    implementation("com.google.dagger:hilt-android:2.50")
+    ksp("com.google.dagger:hilt-compiler:2.50")
 
     //Navigation
     implementation("androidx.navigation:navigation-compose:2.7.6")
