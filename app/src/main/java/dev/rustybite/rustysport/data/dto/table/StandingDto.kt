@@ -2,6 +2,7 @@ package dev.rustybite.rustysport.data.dto.table
 
 
 import com.google.gson.annotations.SerializedName
+import dev.rustybite.rustysport.domain.model.Standing
 
 data class StandingDto(
     @SerializedName("all")
@@ -29,3 +30,19 @@ data class StandingDto(
     @SerializedName("update")
     val update: String
 )
+
+fun StandingDto.toStanding(): Standing =
+    Standing(
+        all = all,
+        away = away,
+        description = description,
+        form = form,
+        goalsDiff = goalsDiff,
+        group = group,
+        home = home,
+        points = points,
+        rank = rank,
+        status = status,
+        team = team,
+        update = update
+    )
