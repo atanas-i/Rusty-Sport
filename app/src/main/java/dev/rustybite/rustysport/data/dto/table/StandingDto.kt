@@ -10,7 +10,7 @@ data class StandingDto(
     @SerializedName("away")
     val away: Away,
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @SerializedName("form")
     val form: String,
     @SerializedName("goalsDiff")

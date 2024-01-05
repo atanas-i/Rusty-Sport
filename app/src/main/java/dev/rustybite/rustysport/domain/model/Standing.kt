@@ -8,7 +8,7 @@ import dev.rustybite.rustysport.data.dto.table.Team
 data class Standing(
     val all: All,
     val away: Away,
-    val description: String,
+    val description: String?,
     val form: String,
     val goalsDiff: Int,
     val group: String,

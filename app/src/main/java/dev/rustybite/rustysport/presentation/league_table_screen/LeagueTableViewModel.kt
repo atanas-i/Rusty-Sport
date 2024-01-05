@@ -1,5 +1,6 @@
 package dev.rustybite.rustysport.presentation.league_table_screen
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -8,6 +9,7 @@ import dev.rustybite.rustysport.data.dto.table.toStanding
 import dev.rustybite.rustysport.data.dto.table.toTable
 import dev.rustybite.rustysport.data.repository.LeagueTableRepository
 import dev.rustybite.rustysport.domain.model.Standing
+import dev.rustybite.rustysport.utils.RustySportsConstants.TAG
 import dev.rustybite.rustysport.utils.RustySportsEvents
 import dev.rustybite.rustysport.utils.RustySportsState
 import kotlinx.coroutines.channels.Channel
@@ -43,6 +45,7 @@ class LeagueTableViewModel @Inject constructor(
                         _uiState.value = _uiState.value.copy(
                             standing = standing
                         )
+                        Log.d(TAG, "league table: $standing")
                     }
                     is RustySportsState.Failure -> {
                         _uiState.value = _uiState.value.copy(
@@ -57,6 +60,12 @@ class LeagueTableViewModel @Inject constructor(
 
                 }
             }
+        }
+    }
+
+    fun onTeamClicked(route: String) {
+        viewModelScope.launch {
+            _appEvent.send(RustySportsEvents.Navigate(route))
         }
     }
 }
