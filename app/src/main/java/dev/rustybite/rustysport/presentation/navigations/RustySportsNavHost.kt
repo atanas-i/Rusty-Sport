@@ -13,7 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import dev.rustybite.rustysport.presentation.league_table_screen.LeagueTableScreen
-import dev.rustybite.rustysport.ui.components.RustySportsBottomBar
+import dev.rustybite.rustysport.presentation.ui.components.RustySportsBottomBar
 
 @Composable
 fun RustySportsNavHost(

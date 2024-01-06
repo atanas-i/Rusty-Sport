@@ -1,4 +1,4 @@
-package dev.rustybite.rustysport.ui.theme
+package dev.rustybite.rustysport.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

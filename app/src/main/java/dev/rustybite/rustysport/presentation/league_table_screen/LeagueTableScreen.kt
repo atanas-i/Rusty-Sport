@@ -17,9 +17,9 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import dev.rustybite.rustysport.R
-import dev.rustybite.rustysport.ui.components.RustySportsErrorBody
-import dev.rustybite.rustysport.ui.components.RustySportsLoading
-import dev.rustybite.rustysport.ui.components.RustySportsTopBar
+import dev.rustybite.rustysport.presentation.ui.components.RustySportsErrorBody
+import dev.rustybite.rustysport.presentation.ui.components.RustySportsLoading
+import dev.rustybite.rustysport.presentation.ui.components.RustySportsTopBar
 import dev.rustybite.rustysport.utils.RustySportsEvents
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collectLatest

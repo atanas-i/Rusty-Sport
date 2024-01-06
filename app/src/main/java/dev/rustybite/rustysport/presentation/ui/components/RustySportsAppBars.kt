@@ -1,4 +1,4 @@
-package dev.rustybite.rustysport.ui.components
+package dev.rustybite.rustysport.presentation.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.WindowInsets

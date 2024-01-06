@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.rustybite.rustysport.presentation.navigations.RustySportsNavHost
-import dev.rustybite.rustysport.ui.theme.RustySportTheme
+import dev.rustybite.rustysport.presentation.ui.theme.RustySportTheme
 
 @AndroidEntryPoint
 class RustySportsActivity : ComponentActivity() {
