@@ -37,19 +37,25 @@ class LeagueTableViewModel @Inject constructor(
                     is RustySportsState.Success -> {
                         var standing = emptyList<Standing>()
                         state.data.toTable().response.forEach {
+                            _uiState.value = _uiState.value.copy(
+                                leagueName = it.league.name,
+                                leagueLogo = it.league.logo
+                            )
                             it.league.toLeague().standings.forEach {
                                 standing = it.map { it.toStanding() }
                             }
                         }
 
                         _uiState.value = _uiState.value.copy(
-                            standing = standing
+                            standing = standing,
+                            loading = false
                         )
                         Log.d(TAG, "league table: $standing")
                     }
                     is RustySportsState.Failure -> {
                         _uiState.value = _uiState.value.copy(
-                            errorMessage = state.message
+                            errorMessage = state.message,
+                            loading = false
                         )
                     }
                     is RustySportsState.Loading -> {
@@ -66,6 +72,18 @@ class LeagueTableViewModel @Inject constructor(
     fun onTeamClicked(route: String) {
         viewModelScope.launch {
             _appEvent.send(RustySportsEvents.Navigate(route))
+        }
+    }
+
+    fun onBackButtonClicked() {
+        viewModelScope.launch {
+            _appEvent.send(RustySportsEvents.ShowSnackBar("Pop back to be implemented"))
+        }
+    }
+
+    fun onLogoClicked() {
+        viewModelScope.launch {
+            _appEvent.send(RustySportsEvents.ShowSnackBar("This feature to be implemented"))
         }
     }
 }

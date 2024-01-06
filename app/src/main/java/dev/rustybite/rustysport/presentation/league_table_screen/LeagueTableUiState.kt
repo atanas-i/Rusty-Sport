@@ -6,5 +6,7 @@ import dev.rustybite.rustysport.domain.model.Table
 data class LeagueTableUiState(
     val loading: Boolean = false,
     val standing: List<Standing> = emptyList(),
+    val leagueName: String = "",
+    val leagueLogo: String = "",
     val errorMessage: String? = null
 )
