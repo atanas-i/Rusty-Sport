@@ -1,6 +1,5 @@
 package dev.rustybite.rustysport.domain.model
 
-import com.google.gson.annotations.SerializedName
 import dev.rustybite.rustysport.data.dto.fixture.FixtureDto
 import dev.rustybite.rustysport.data.dto.fixture.Goals
 import dev.rustybite.rustysport.data.dto.fixture.League
