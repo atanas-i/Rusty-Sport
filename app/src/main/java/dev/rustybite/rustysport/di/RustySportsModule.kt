@@ -30,4 +30,9 @@ object RustySportsModule {
     fun provideLeagueTableRepository(api: RustySportsApi): LeagueTableRepository =
         LeagueTableRepositoryImpl(api)
 
+    @Provides
+    @Singleton
+    fun providesLeagueFixtureRepository(api: RustySportsApi): LeagueTableRepository =
+        LeagueTableRepositoryImpl(api)
+
 }
