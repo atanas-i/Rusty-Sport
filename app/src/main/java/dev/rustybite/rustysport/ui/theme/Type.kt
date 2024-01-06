@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 import dev.rustybite.rustysport.R
 
 
-//private val ubuntuLight = FontFamily(Font(R.font.ubuntu_light))
+private val ubuntuLight = FontFamily(Font(R.font.ubuntu_light))
 private val ubuntuMedium = FontFamily(Font(R.font.ubuntu_medium))
 private val ubuntuRegular = FontFamily(Font(R.font.ubuntu_regular))
 
@@ -29,9 +29,9 @@ val Typography = Typography(
                 letterSpacing = 0.3.sp
         ),
         bodySmall = TextStyle(
-                fontFamily = ubuntuRegular,
-                fontWeight = FontWeight.Normal,
-                fontSize = 16.sp,
+                fontFamily = ubuntuLight,
+                fontWeight = FontWeight.W100,
+                fontSize = 14.sp,
                 lineHeight = 18.sp,
                 letterSpacing = 0.3.sp
         ),

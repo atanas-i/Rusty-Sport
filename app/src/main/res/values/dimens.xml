@@ -2,4 +2,10 @@
 <resources>
     <dimen name="rs_icon_size_small">14.dp</dimen>
     <dimen name="rs_icon_size_medium">24.dp</dimen>
+    <dimen name="rs_padding_extra_small">8dp</dimen>
+    <dimen name="rs_padding_small">12dp</dimen>
+    <dimen name="rs_padding_medium">16dp</dimen>
+    <dimen name="rs_padding_large">18dp</dimen>
+    <dimen name="rs_team_logo_size_medium">18dp</dimen>
+    <dimen name="rs_team_logo_size_large">32dp</dimen>
 </resources>
