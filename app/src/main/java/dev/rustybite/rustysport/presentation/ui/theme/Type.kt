@@ -1,4 +1,4 @@
-package dev.rustybite.rustysport.ui.theme
+package dev.rustybite.rustysport.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -17,14 +17,14 @@ val Typography = Typography(
         bodyLarge = TextStyle(
                 fontFamily = ubuntuRegular,
                 fontWeight = FontWeight.Normal,
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 lineHeight = 18.sp,
                 letterSpacing = 0.3.sp
         ),
         bodyMedium = TextStyle(
                 fontFamily = ubuntuRegular,
                 fontWeight = FontWeight.Normal,
-                fontSize = 18.sp,
+                fontSize = 16.sp,
                 lineHeight = 18.sp,
                 letterSpacing = 0.3.sp
         ),

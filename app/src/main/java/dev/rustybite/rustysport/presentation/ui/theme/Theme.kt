@@ -1,4 +1,4 @@
-package dev.rustybite.rustysport.ui.theme
+package dev.rustybite.rustysport.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

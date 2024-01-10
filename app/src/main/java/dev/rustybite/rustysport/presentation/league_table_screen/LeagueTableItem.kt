@@ -31,7 +31,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import dev.rustybite.rustysport.R
 import dev.rustybite.rustysport.domain.model.Standing
-import dev.rustybite.rustysport.ui.theme.md_theme_dark_onError
+import dev.rustybite.rustysport.presentation.ui.theme.md_theme_dark_onError
 
 @Composable
 fun LeagueTableItem(

@@ -12,8 +12,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import dev.rustybite.rustysport.presentation.league_fixture_screen.LeagueFixtureScreen
 import dev.rustybite.rustysport.presentation.league_table_screen.LeagueTableScreen
-import dev.rustybite.rustysport.ui.components.RustySportsBottomBar
+import dev.rustybite.rustysport.presentation.ui.components.RustySportsBottomBar
 
 @Composable
 fun RustySportsNavHost(
@@ -32,7 +33,7 @@ fun RustySportsNavHost(
                 .padding(paddingValues)
         ) {
             composable("home_screen") {
-                LeagueTableScreen(
+                LeagueFixtureScreen(
                     onNavigate = { event ->
                         navController.navigate(event.route)
                     },
@@ -44,13 +45,32 @@ fun RustySportsNavHost(
             composable("games_screen") {}
             composable("profile_screen") {}
             composable("settings_screen") {}
+            composable("league_table_screen") {
+                LeagueTableScreen(
+                    onNavigate = { event ->
+                        navController.navigate(event.route)
+                    },
+                    onPopBackStack = {
+                        navController.popBackStack()
+                    }
+                )
+            }
             composable(
                 "team/{teamId}",
-                arguments = listOf(navArgument("teamId") { type = NavType.IntType})
+                arguments = listOf(navArgument("teamId") { type = NavType.IntType })
             ) { navBackStackEntry ->
                 val teamId = navBackStackEntry.arguments?.getInt("teamId")
-                teamId?.let { 
+                teamId?.let {
                     Text(text = "Team Id is $it")
+                }
+            }
+            composable(
+                "fixture_details/{fixtureId}",
+                arguments = listOf(navArgument("fixtureId") { NavType.IntType })
+            ) { navBackStackEntry ->
+                val fixtureId = navBackStackEntry.arguments?.getInt("fixtureId")
+                fixtureId?.let {
+                    Text(text = "Fixture Id is $it")
                 }
             }
         }
