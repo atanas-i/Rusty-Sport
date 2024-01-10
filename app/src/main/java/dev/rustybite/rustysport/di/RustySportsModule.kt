@@ -6,7 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.rustybite.rustysport.data.remote.RustySportsApi
+import dev.rustybite.rustysport.data.repository.LeagueFixtureRepository
 import dev.rustybite.rustysport.data.repository.LeagueTableRepository
+import dev.rustybite.rustysport.domain.repository.LeagueFixtureRepositoryImpl
 import dev.rustybite.rustysport.domain.repository.LeagueTableRepositoryImpl
 import dev.rustybite.rustysport.utils.RustySportsConstants
 import retrofit2.Retrofit
@@ -32,7 +34,7 @@ object RustySportsModule {
 
     @Provides
     @Singleton
-    fun providesLeagueFixtureRepository(api: RustySportsApi): LeagueTableRepository =
-        LeagueTableRepositoryImpl(api)
+    fun providesLeagueFixtureRepository(api: RustySportsApi): LeagueFixtureRepository =
+        LeagueFixtureRepositoryImpl(api)
 
 }

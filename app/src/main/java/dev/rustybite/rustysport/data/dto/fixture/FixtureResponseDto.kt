@@ -1,6 +1,8 @@
 package dev.rustybite.rustysport.data.dto.fixture
 
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.google.gson.annotations.SerializedName
 import dev.rustybite.rustysport.domain.model.FixtureResponse
 
@@ -17,9 +19,10 @@ data class FixtureResponseDto(
     val teams: Teams
 )
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun FixtureResponseDto.toFixtureResponse() =
     FixtureResponse(
-        fixture = fixture,
+        fixture = fixture.toFixture(),
         goals = goals,
         league = league,
         score = score,
